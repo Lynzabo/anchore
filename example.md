@@ -268,31 +268,6 @@ skipping data sync for unsubscribed feed (packages) ...
 |                  |            |                 |                           |                 |                           |                | 17-13730                  |
 | CVE-2017-13730   | Medium     | 1               | libtinfo5-6.0+20161126-1  | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
 |                  |            |                 |                           |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 17-13730                  |
-| CVE-2017-13730   | Medium     | 1               | libncursesw5-6.0+20161126 | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
-|                  |            |                 | -1                        |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 17-13730                  |
-| CVE-2017-13730   | Medium     | 1               | libncurses5-6.0+20161126- | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
-|                  |            |                 | 1                         |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 17-13730                  |
-| CVE-2017-13729   | Medium     | 1               | ncurses-                  | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
-|                  |            |                 | bin-6.0+20161126-1        |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 17-13729                  |
-| CVE-2017-13729   | Medium     | 1               | ncurses-                  | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
-|                  |            |                 | base-6.0+20161126-1       |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 17-13729                  |
-| CVE-2017-13729   | Medium     | 1               | libtinfo5-6.0+20161126-1  | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
-|                  |            |                 |                           |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 17-13729                  |
-| CVE-2017-13729   | Medium     | 1               | libncursesw5-6.0+20161126 | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
-|                  |            |                 | -1                        |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 17-13729                  |
-| CVE-2017-13729   | Medium     | 1               | libncurses5-6.0+20161126- | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
-|                  |            |                 | 1                         |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 17-13729                  |
-| CVE-2017-13728   | Medium     | 1               | ncurses-                  | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
-|                  |            |                 | bin-6.0+20161126-1        |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 17-13728                  |
 | CVE-2017-13728   | Medium     | 1               | ncurses-                  | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
 |                  |            |                 | base-6.0+20161126-1       |                 | )                         |                | debian.org/tracker/CVE-20 |
 |                  |            |                 |                           |                 |                           |                | 17-13728                  |
@@ -436,37 +411,6 @@ skipping data sync for unsubscribed feed (packages) ...
 |                  |            |                 |                           |                 |                           |                | 16-2779                   |
 | CVE-2016-2779    | High       | 1               | mount-2.29.2-1            | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
 |                  |            |                 |                           |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 16-2779                   |
-| CVE-2016-2779    | High       | 1               | libuuid1-2.29.2-1         | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
-|                  |            |                 |                           |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 16-2779                   |
-| CVE-2016-2779    | High       | 1               | libsmartcols1-2.29.2-1    | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
-|                  |            |                 |                           |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 16-2779                   |
-| CVE-2016-2779    | High       | 1               | libmount1-2.29.2-1        | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
-|                  |            |                 |                           |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 16-2779                   |
-| CVE-2016-2779    | High       | 1               | libfdisk1-2.29.2-1        | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
-|                  |            |                 |                           |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 16-2779                   |
-| CVE-2016-2779    | High       | 1               | libblkid1-2.29.2-1        | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
-|                  |            |                 |                           |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 16-2779                   |
-| CVE-2016-10228   | Medium     | 1               | multiarch-                | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
-|                  |            |                 | support-2.24-11+deb9u1    |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 16-10228                  |
-| CVE-2016-10228   | Medium     | 1               | libc6-2.24-11+deb9u1      | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
-|                  |            |                 |                           |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 16-10228                  |
-| CVE-2016-10228   | Medium     | 1               | libc-bin-2.24-11+deb9u1   | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
-|                  |            |                 |                           |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 16-10228                  |
-| CVE-2015-9019    | Negligible | 1               | libxslt1.1-1.1.29-2.1     | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
-|                  |            |                 |                           |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 15-9019                   |
-| CVE-2015-8985    | Negligible | 1               | multiarch-                | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
-|                  |            |                 | support-2.24-11+deb9u1    |                 | )                         |                | debian.org/tracker/CVE-20 |
-|                  |            |                 |                           |                 |                           |                | 15-8985                   |
 | CVE-2015-8985    | Negligible | 1               | libc6-2.24-11+deb9u1      | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |
 |                  |            |                 |                           |                 | )                         |                | debian.org/tracker/CVE-20 |
 |                  |            |                 |                           |                 |                           |                | 15-8985                   |

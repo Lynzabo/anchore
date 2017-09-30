@@ -68,10 +68,7 @@ Unavailable/Insufficient Access Tier:
     description: This feed provides package data for various application package systems
       in json form
 
-[root@localhost anchore]# anchore feeds list > 1.txt
-[root@localhost anchore]# ls
-1.txt  anchore  CHANGELOG.md  CONTRIBUTING.rst  LICENSE.txt  MANIFEST.in  README.rst  requirements.txt  scripts  setup.py  tests  Vagrantfile
-[root@localhost anchore]# cat 1.txt 
+[root@localhost anchore]# anchore feeds list
 Subscribed:
   vulnerabilities:
     description: This feed provides vulnerability data for various linux distributions
@@ -109,8 +106,7 @@ syncing data for subscribed feed (vulnerabilities) ...
 	syncing group data: ol:5: ...
 skipping data sync for unsubscribed feed (packages) ...
 [root@localhost anchore]# 
-[root@localhost anchore]# 
-anchore analyze --image nginx:latest --imagetype base
+[root@localhost anchore]# anchore analyze --image nginx:latest --imagetype base
 
 [root@localhost anchore]# anchore audit --image nginx:latest report
 +--------------+------+--------------+--------------+-------------+-------------+---------------------+------------+
@@ -161,11 +157,8 @@ anchore analyze --image nginx:latest --imagetype base
 |              |              |                           |       |          |       |                           | e8d4086a9672b9            |
 +--------------+--------------+---------------------------+-------+----------+-------+---------------------------+---------------------------+
 
-[root@localhost anchore]# anchore query --image nginx:latest cve-scan all > 1.txt
-[root@localhost anchore]#
-[root@localhost anchore]#
-[root@localhost anchore]#
-[root@localhost anchore]# +------------------+------------+-----------------+---------------------------+-----------------+---------------------------+----------------+---------------------------+
+[root@localhost anchore]# anchore query --image nginx:latest cve-scan all
++------------------+------------+-----------------+---------------------------+-----------------+---------------------------+----------------+---------------------------+
 | CVE ID           | Severity   | *Total Affected | Vulnerable Package        | Fix Available   | Fix Images                | Rebuild Images | URL                       |
 +------------------+------------+-----------------+---------------------------+-----------------+---------------------------+----------------+---------------------------+
 | CVE-2017-9937    | Negligible | 1               | libjbig0-2.1-3.1+b2       | None            | da5939581ac8(nginx:latest | None           | https://security-tracker. |

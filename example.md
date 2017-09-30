@@ -1,3 +1,4 @@
+```shell
 [root@localhost anchore]# anchore --help
 Usage: anchore [OPTIONS] COMMAND [ARGS]...
 
@@ -571,4 +572,4 @@ BASEID='da5939581ac835614e3cf6c765e7489e6d0fc602a44e98c07013f1c938f49675'
 IMAGETYPE='base'
 [root@localhost anchore]# 
 [root@localhost anchore]# 
-
+```

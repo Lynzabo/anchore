@@ -124,7 +124,7 @@ skipping data sync for unsubscribed feed (packages) ...
 +----------+----------+-------------+---------+---------+
 
 [root@localhost anchore]# 
-[root@localhost anchore]# 
+[root@localhost anchore]# anchore query --image nginx:latest list-files-detail all
 +--------------+--------------+---------------------------+-------+----------+-------+---------------------------+---------------------------+
 | Image Id     | Repo Tags    | Filename                  | Type  | Size     | Mode  | Link Dest                 | Checksum                  |
 +--------------+--------------+---------------------------+-------+----------+-------+---------------------------+---------------------------+

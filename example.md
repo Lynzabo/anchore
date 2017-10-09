@@ -58,6 +58,7 @@ Commands:
   whoami        Show user data for current logged-in user if available
 [root@localhost anchore]# 
 
+[root@localhost anchore]# 查看同步信息,包括漏洞和包信息
 [root@localhost anchore]# anchore feeds list
 Subscribed:
   vulnerabilities:
@@ -67,17 +68,7 @@ Unavailable/Insufficient Access Tier:
   packages:
     description: This feed provides package data for various application package systems
       in json form
-
-[root@localhost anchore]# anchore feeds list
-Subscribed:
-  vulnerabilities:
-    description: This feed provides vulnerability data for various linux distributions
-      in json form
-Unavailable/Insufficient Access Tier:
-  packages:
-    description: This feed provides package data for various application package systems
-      in json form
-
+[root@localhost anchore]# 请求去同步漏洞和包信息
 [root@localhost anchore]# anchore feeds sync
 syncing data for subscribed feed (vulnerabilities) ...
 	syncing group data: debian:unstable: ...
@@ -105,9 +96,10 @@ syncing data for subscribed feed (vulnerabilities) ...
 	syncing group data: ubuntu:13.04: ...
 	syncing group data: ol:5: ...
 skipping data sync for unsubscribed feed (packages) ...
-[root@localhost anchore]# 
+[root@localhost anchore]# 请求解析镜像
 [root@localhost anchore]# anchore analyze --image nginx:latest --imagetype base
 
+[root@localhost anchore]# 获取镜像的解析结果，包括包信息，文件，漏洞信息等。
 [root@localhost anchore]# anchore audit --image nginx:latest report
 +--------------+------+--------------+--------------+-------------+-------------+---------------------+------------+
 | Image Id     | Type | Current Tags | All Tags     | Gate Status | Size(bytes) | Counts              | Base Diffs |
@@ -116,14 +108,14 @@ skipping data sync for unsubscribed feed (packages) ...
 |              |      |              |              |             |             | SUIDFILES=8         |            |
 +--------------+------+--------------+--------------+-------------+-------------+---------------------+------------+
 
-[root@localhost anchore]# 
+[root@localhost anchore]# 查看镜像中是否包含包zzz，aaa
 [root@localhost anchore]# anchore query --image nginx:latest has-package curl wget
 +----------+----------+-------------+---------+---------+
 | Image Id | Repo Tag | Query Param | Package | Version |
 +----------+----------+-------------+---------+---------+
 +----------+----------+-------------+---------+---------+
 
-[root@localhost anchore]# 
+[root@localhost anchore]# 查看包中包含所有文件信息
 [root@localhost anchore]# anchore query --image nginx:latest list-files-detail all
 +--------------+--------------+---------------------------+-------+----------+-------+---------------------------+---------------------------+
 | Image Id     | Repo Tags    | Filename                  | Type  | Size     | Mode  | Link Dest                 | Checksum                  |
@@ -157,6 +149,7 @@ skipping data sync for unsubscribed feed (packages) ...
 |              |              |                           |       |          |       |                           | e8d4086a9672b9            |
 +--------------+--------------+---------------------------+-------+----------+-------+---------------------------+---------------------------+
 
+[root@localhost anchore]# 查看包所有CVE
 [root@localhost anchore]# anchore query --image nginx:latest cve-scan all
 +------------------+------------+-----------------+---------------------------+-----------------+---------------------------+----------------+---------------------------+
 | CVE ID           | Severity   | *Total Affected | Vulnerable Package        | Fix Available   | Fix Images                | Rebuild Images | URL                       |

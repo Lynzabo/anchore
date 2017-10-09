@@ -34,7 +34,7 @@ class Navigator(object):
             baseId = image.get_earliest_base()
             bimage = self.allimages[baseId]
             sizebytes = image.meta['sizebytes']
-
+            # 从数据库/json中读取分析结果
             image_report = image.get_image_report()
             analysis_report = image.get_analysis_report()
             gates_report = image.get_gates_report()

@@ -121,7 +121,7 @@ class Analyzer(object):
             pass
 
         #self.analyze_familytree = args.get('analyze_familytree', False) if args else False
-
+        # 选择分析策略
         # Instantiate the appropriate strategy
         self.selection_strategy = strategies.get(args.get('selection_strategy', 'NoIntermediates'))() if args else FirstLastStrategy()
 
@@ -160,6 +160,7 @@ class Analyzer(object):
         return(False)
 
     def list_analyzers(self):
+        # 获取analyzer目录路径,返回所有要执行脚本
         analyzerdir = '/'.join([self.config["scripts_dir"], "analyzers"])
         overrides = ['extra_scripts_dir', 'user_scripts_dir']
 
@@ -189,7 +190,9 @@ class Analyzer(object):
 
     def run_analyzers(self, image):
         success = True
+        # 读取所有分析器，运行时都在/home/lynzabo/.local/lib/python2.7/site-packages/anchore/anchore-modules/analyzers/目录下
         analyzers = self.list_analyzers()
+        # 分析anchore analyze - -image nginx:latest - -imagetype base的结果日志，看文档log.md
         imagename = image.meta['imagename']
         #outputdir = image.anchore_imagedir
         shortid = image.meta['shortId']
@@ -251,25 +254,27 @@ class Analyzer(object):
                 if dorun:
                     if not skip:
                         if not imagedir:
-                            self._logger.info(image.meta['shortId'] + ": analyzing ...")                            
+                            self._logger.info(image.meta['shortId'] + ": analyzing ...")
+                            # 解压镜像的tar文件到一个临时目录,后面的所有分析器会用到这个目录下文件,如果景象不存在，则先pull
                             imagedir = image.unpack()
                             if not imagedir:
                                 self._logger.error("could not unpack image")
                                 return(False)
                             
                         outputdir = tempfile.mkdtemp(dir=imagedir)
+
                         cmdline = ' '.join([imagename, self.config['image_data_store'], outputdir, imagedir])
                         cmdstr = script + " " + cmdline
                         cmd = cmdstr.split()
                         try:
-                            self._logger.debug("running analyzer: " + cmdstr)
+                            self._logger.info("running analyzer: " + cmdstr)
                             timer = time.time()
                             outstr = subprocess.check_output(cmd, stderr=subprocess.STDOUT)
-                            self._logger.debug("analyzer time (seconds): " + str(time.time() - timer))
+                            self._logger.info("analyzer time (seconds): " + str(time.time() - timer))
                             rc = 0
-                            self._logger.debug("analyzer status: success")
-                            self._logger.debug("analyzer exitcode: " + str(rc))
-                            self._logger.debug("analyzer output: " + outstr)
+                            self._logger.info("analyzer status: success")
+                            self._logger.info("analyzer exitcode: " + str(rc))
+                            self._logger.info("analyzer output: " + outstr)
                         except subprocess.CalledProcessError as err:
                             rc = err.returncode
                             outstr = err.output
@@ -413,6 +418,8 @@ class Analyzer(object):
         self._logger.debug("images to be analyzed: " + str(toanalyze.keys()))
         for imageId in toanalyze.keys():
             image = toanalyze[imageId]
+
+            # 执行
             success = self.run_analyzers(image)
 
             if not success:

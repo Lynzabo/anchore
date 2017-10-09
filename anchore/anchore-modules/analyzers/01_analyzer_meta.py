@@ -10,7 +10,12 @@ import subprocess
 import anchore.anchore_utils
 
 analyzer_name = "analyzer_meta"
-
+# running analyzer:
+# command: /root/.local/lib/python2.7/site-packages/anchore/anchore-modules/analyzers/01_analyzer_meta.py
+# param1: da5939581ac835614e3cf6c765e7489e6d0fc602a44e98c07013f1c938f49675
+# param2: /root/.anchore/data
+# param3: /root/.anchore/anchoretmp/1068362.anchoretmp/tmpl4jkBy
+# param4: /root/.anchore/anchoretmp/1068362.anchoretmp
 try:
     config = anchore.anchore_utils.init_analyzer_cmdline(sys.argv, analyzer_name)
 except Exception as err:

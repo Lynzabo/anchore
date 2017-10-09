@@ -12,7 +12,12 @@ import subprocess
 import anchore.anchore_utils
 
 analyzer_name = "layer_info"
-
+# running analyzer:
+# command: running analyzer: /root/.local/lib/python2.7/site-packages/anchore/anchore-modules/analyzers/02_layers.py
+# param1: da5939581ac835614e3cf6c765e7489e6d0fc602a44e98c07013f1c938f49675
+# param2: /root/.anchore/data
+# param3: /root/.anchore/anchoretmp/1068362.anchoretmp/tmpl4jkBy
+# param4: /root/.anchore/anchoretmp/1068362.anchoretmp
 try:
     config = anchore.anchore_utils.init_analyzer_cmdline(sys.argv, analyzer_name)
 except Exception as err:

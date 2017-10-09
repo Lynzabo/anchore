@@ -90,6 +90,7 @@ def list(showgroups):
         available = {}
         unavailable = {}
         current_user_data = contexts['anchore_auth']['user_info']
+
         feedmeta = anchore_feeds.load_anchore_feedmeta()
 
         for feed in feedmeta.keys():

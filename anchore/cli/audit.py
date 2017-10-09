@@ -35,6 +35,7 @@ def audit(anchore_config, ctx, image, imagefile, include_allanchore):
     #    include_allanchore = False
 
     try:
+        # 获得所有镜像
         imagedict = build_image_list(anchore_config, image, imagefile, not (image or imagefile), include_allanchore)
         imagelist = imagedict.keys()
         try:

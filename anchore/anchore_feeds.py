@@ -29,6 +29,7 @@ def get_feed_list():
 
     done = False
     while not done:
+        # contexts['anchore_auth'] -> /root/.anchore/conf/anchore_auth.json
         record = anchore.anchore_auth.anchore_auth_get(contexts['anchore_auth'], url, timeout=feed_timeout,
                                                        retries=feed_maxretries)
         ret.update(record)
@@ -152,7 +153,7 @@ def create_feedgroup(feed, group):
 
 def sync_feedmeta(default_sublist=['vulnerabilities']):
     ret = {'success': False, 'text': "", 'status_code': 1}
-
+    # 从https://ancho.re/v1/service/feeds同步漏洞和包信息过来，保存在本地数据库或者feedmeta.json文件,本地保存漏洞信息
     try:
         feedmeta = load_anchore_feedmeta()
 

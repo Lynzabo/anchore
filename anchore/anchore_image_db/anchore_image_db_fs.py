@@ -704,6 +704,62 @@ class AnchoreImageDB_FS(anchore_image_db_base.AnchoreImageDB):
         return(True)
 
     def load_feedmeta(self):
+        '''
+        /root/.anchore/feeds/feedmeta.json:
+        {
+            "packages": {
+                "access_tier": "1",
+                "description": "This feed provides package data for various application package systems in json form",
+                "groups": {},
+                "name": "packages",
+                "subscribed": false
+            },
+            "vulnerabilities": {
+                "access_tier": "0",
+                "description": "This feed provides vulnerability data for various linux distributions in json form",
+                "groups": {
+                    "alpine:3.3": {
+                        "access_tier": "0",
+                        "datafiles": [
+                            "data_1970-01-01_to_2017-09-30.json",
+                            "data_2017-09-30_to_2017-09-30.json"
+                        ],
+                        "description": "This group provides the vulnerability data for alpine:3.3",
+                        "last_update": 1506755687,
+                        "name": "alpine:3.3",
+                        "prev_update": 1506755152
+                    },
+                    "alpine:3.4": {
+                        "access_tier": "0",
+                        "datafiles": [
+                            "data_1970-01-01_to_2017-09-30.json",
+                            "data_2017-09-30_to_2017-09-30.json"
+                        ],
+                        "description": "This group provides the vulnerability data for alpine:3.4",
+                        "last_update": 1506755689,
+                        "name": "alpine:3.4",
+                        "prev_update": 1506755157
+                    },
+                    ...
+                    "ubuntu:17.04": {
+                        "access_tier": "0",
+                        "datafiles": [
+                            "data_1970-01-01_to_2017-09-30.json",
+                            "data_2017-09-30_to_2017-09-30.json"
+                        ],
+                        "description": "This group provides the vulnerability data for ubuntu:17.04",
+                        "last_update": 1506755704,
+                        "name": "ubuntu:17.04",
+                        "prev_update": 1506755248
+                    }
+                },
+                "name": "vulnerabilities",
+                "subscribed": true
+            }
+        }
+
+        :return:
+        '''
         ret = {}
 
         basedir = self.feedrootdir

@@ -357,10 +357,12 @@ def analyze(anchore_config, force, image, imagefile, include_allanchore, dockerf
                 raise click.BadOptionUsage("Invalid imagetype specified: valid types are 'none' or 'base'")
 
     try:
+        # 获取用户输入的镜像列表
         imagedict = build_image_list(anchore_config, image, imagefile, not (image or imagefile), include_allanchore, exclude_file=excludefile, dockerfile=dockerfile)
         imagelist = imagedict.keys()
 
         try:
+
             ret = anchore_utils.discover_imageIds(imagelist)
         except ValueError as err:
             raise err
@@ -377,6 +379,7 @@ def analyze(anchore_config, force, image, imagefile, include_allanchore, dockerf
         count = 0
         allimages = {}
         success = True
+        # 分析所有镜像        TODO
         for imageId in imagedict.keys():
 
             if count % step == 0:
@@ -389,7 +392,9 @@ def analyze(anchore_config, force, image, imagefile, include_allanchore, dockerf
             inlist = [imageId]
             try:
                 anchore_print("Analyzing image: " + imageId)
-                rc = analyzer.Analyzer(anchore_config=anchore_config, imagelist=inlist, allimages=allimages, force=force, args=args).run()
+                # 分析镜像
+                rc = analyzer.Analyzer(anchore_config=anchore_config, imagelist=inlist, allimages=allimages, force=force, args=args)\
+                    .run()
                 if not rc:
                     anchore_print_err("analysis failed.")
                     success = False
